@@ -1,0 +1,100 @@
+/* ==== GLOBAL ==== */
+QMainWindow {
+    background-color: #f3f3f3;
+    font-family: "Segoe UI", "Noto Sans", sans-serif;
+    font-size: 9pt;
+}
+
+QGroupBox {
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    margin-top: 8px;
+    background: #ffffff;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 4px 0 4px;
+    color: #333333;
+    font-weight: 600;
+}
+
+QLabel {
+    color: #333;
+}
+
+QComboBox, QLineEdit {
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    padding: 4px;
+    background: #ffffff;
+    min-height: 22px;
+}
+
+QComboBox:hover, QLineEdit:hover {
+    border: 1px solid #0078d7;
+}
+
+QComboBox:focus, QLineEdit:focus {
+    border: 1px solid #0078d7;
+}
+
+/* ==== Buttons ==== */
+QPushButton {
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    padding: 5px 12px;
+    background: #e6e6e6;
+}
+
+QPushButton:hover {
+    background: #dcdcdc;
+}
+
+QPushButton:pressed {
+    background: #cfcfcf;
+}
+
+/* START BUTTON */
+QPushButton#btnStart {
+    background-color: #0078d7;
+    color: white;
+    font-weight: bold;
+    border: none;
+    min-height: 32px;
+}
+
+QPushButton#btnStart:hover {
+    background-color: #1890ff;
+}
+
+QPushButton#btnStart:pressed {
+    background-color: #0063b1;
+}
+
+/* ==== Progress Bar ==== */
+QProgressBar {
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    background: #ffffff;
+    height: 18px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #0078d7;
+}
+
+/* ==== Log ==== */
+QTextEdit {
+    border: 1px solid #c8c8c8;
+    background: #ffffff;
+    font-family: Consolas, monospace;
+    font-size: 8pt;
+}
+
+/* ==== Checkboxes ==== */
+QCheckBox {
+    spacing: 6px;
+}

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>520</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pokoyo Imager 1.0</string>
+  </property>
+
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="margin">
+     <number>8</number>
+    </property>
+
+    <!-- THEME SELECTION -->
+    <item>
+     <layout class="QHBoxLayout">
+      <item>
+       <widget class="QLabel" name="labelTheme">
+        <property name="text">
+         <string>Theme:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboTheme">
+        <item>
+         <property name="text">
+          <string>Light</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dark</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="themeSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+
+    <!-- DEVICE -->
+    <item>
+     <widget class="QGroupBox" name="groupDevice">
+      <property name="title">
+       <string>Device</string>
+      </property>
+      <layout class="QHBoxLayout">
+       <item>
+        <widget class="QComboBox" name="comboDevice"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnRefresh">
+         <property name="text">
+          <string>Refresh</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- BOOT SELECTION -->
+    <item>
+     <widget class="QGroupBox" name="groupBoot">
+      <property name="title">
+       <string>Boot selection</string>
+      </property>
+      <layout class="QVBoxLayout">
+       <item>
+        <widget class="QComboBox" name="comboBootType"/>
+       </item>
+       <item>
+        <layout class="QHBoxLayout">
+         <item>
+          <widget class="QLineEdit" name="editImagePath"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSelectImage">
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- PARTITION -->
+    <item>
+     <widget class="QGroupBox" name="groupPartition">
+      <property name="title">
+       <string>Partition scheme</string>
+      </property>
+      <layout class="QFormLayout">
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+
+       <item row="0" column="0">
+        <widget class="QLabel">
+         <property name="text">
+          <string>Scheme:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comboPartitionScheme"/>
+       </item>
+
+       <item row="1" column="0">
+        <widget class="QLabel">
+         <property name="text">
+          <string>Target system:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="comboTargetSystem"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- FORMAT OPTIONS -->
+    <item>
+     <widget class="QGroupBox" name="groupFormat">
+      <property name="title">
+       <string>Format options</string>
+      </property>
+      <layout class="QFormLayout">
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+
+       <item row="0" column="0">
+        <widget class="QLabel">
+         <property name="text">
+          <string>File system:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comboFileSystem"/>
+       </item>
+
+       <item row="1" column="0">
+        <widget class="QLabel">
+         <property name="text">
+          <string>Cluster size:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="comboClusterSize"/>
+       </item>
+
+       <item row="2" column="0">
+        <widget class="QLabel">
+         <property name="text">
+          <string>Volume label:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="editVolumeLabel"/>
+       </item>
+
+       <item row="3" column="0" colspan="2">
+        <widget class="QCheckBox" name="checkQuickFormat">
+         <property name="text">
+          <string>Quick format</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="4" column="0" colspan="2">
+        <widget class="QCheckBox" name="checkExtendedLabel">
+         <property name="text">
+          <string>Create extended label and icon files</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <!-- PROGRESS -->
+    <item>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="minimumHeight">
+       <number>18</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+
+    <!-- LOG -->
+    <item>
+     <widget class="QTextEdit" name="textLog">
+      <property name="minimumHeight">
+       <number>120</number>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+
+    <!-- BUTTONS -->
+    <item>
+     <layout class="QHBoxLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnStart">
+        <property name="minimumWidth">
+         <number>110</number>
+        </property>
+        <property name="text">
+         <string>START</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnClose">
+        <property name="minimumWidth">
+         <number>80</number>
+        </property>
+        <property name="text">
+         <string>CLOSE</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
