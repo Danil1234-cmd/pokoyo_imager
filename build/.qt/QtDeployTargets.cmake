@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_pokoyo_imager_FILE /home/user/pokoyo_imager/build/pokoyo_imager)
+set(__QT_DEPLOY_TARGET_pokoyo_imager_TYPE EXECUTABLE)

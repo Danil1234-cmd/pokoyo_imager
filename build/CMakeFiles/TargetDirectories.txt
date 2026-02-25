@@ -1,0 +1,9 @@
+/home/user/pokoyo_imager/build/CMakeFiles/pokoyo_imager.dir
+/home/user/pokoyo_imager/build/CMakeFiles/edit_cache.dir
+/home/user/pokoyo_imager/build/CMakeFiles/rebuild_cache.dir
+/home/user/pokoyo_imager/build/CMakeFiles/list_install_components.dir
+/home/user/pokoyo_imager/build/CMakeFiles/install.dir
+/home/user/pokoyo_imager/build/CMakeFiles/install/local.dir
+/home/user/pokoyo_imager/build/CMakeFiles/install/strip.dir
+/home/user/pokoyo_imager/build/CMakeFiles/pokoyo_imager_autogen_timestamp_deps.dir
+/home/user/pokoyo_imager/build/CMakeFiles/pokoyo_imager_autogen.dir

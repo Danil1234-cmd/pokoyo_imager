@@ -9,8 +9,13 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Concurrent)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Concurrent)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(LIBUDEV REQUIRED libudev)
+pkg_check_modules(LIBBLKID QUIET libblkid)
+pkg_check_modules(LIBPARTED REQUIRED libparted)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -44,7 +49,9 @@ else()
     endif()
 endif()
 
-target_link_libraries(pokoyo_imager PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_include_directories(pokoyo_imager PRIVATE ${LIBUDEV_INCLUDE_DIRS} ${LIBPARTED_INCLUDE_DIRS} ${LIBBLKID_INCLUDE_DIRS})
+target_link_libraries(pokoyo_imager PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Concurrent ${LIBUDEV_LIBRARIES} ${LIBPARTED_LIBRARIES} ${LIBBLKID_LIBRARIES})
+target_compile_options(pokoyo_imager PRIVATE ${LIBUDEV_CFLAGS_OTHER} ${LIBPARTED_CFLAGS_OTHER} ${LIBBLKID_CFLAGS_OTHER})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
